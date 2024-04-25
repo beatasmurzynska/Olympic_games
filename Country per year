@@ -1,0 +1,4 @@
+SELECT  distinct(year), country
+FROM [test].[dbo].[athlete_events_country]
+WHERE Season like 'Summer'
+order by Year
