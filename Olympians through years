@@ -1,0 +1,8 @@
+SELECT Year, Count(*)
+FROM (
+	SELECT  distinct(Name), Year
+	FROM [test].[dbo].[athlete_events_country]
+	WHERE Season like 'Summer'
+	) as sub
+GROUP BY Year
+Order by 1
