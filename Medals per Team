@@ -1,0 +1,8 @@
+SELECT count (*) as Medals, Team, Medal
+FROM (
+	SELECT  distinct(team), year,  Event, Medal
+	FROM [test].[dbo].[athlete_events_country]
+	WHERE Medal <> 'NA' and Season like 'Summer'
+	) as sub
+group by Medal, Team
+ORDER BY 3,1 desc 
